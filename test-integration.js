@@ -42,7 +42,9 @@ if (missingVars.length === 2) {
 }
 
 // Restore environment
-process.env = originalEnv;
+// Restore only the modified environment variables
+process.env.IMGFLIP_USERNAME = originalEnv.IMGFLIP_USERNAME;
+process.env.IMGFLIP_PASSWORD = originalEnv.IMGFLIP_PASSWORD;
 
 console.log("\n🎉 All tests completed successfully!");
 console.log("✅ Your MCP Server improvements are working correctly!");
