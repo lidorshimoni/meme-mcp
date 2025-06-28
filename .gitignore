@@ -1,3 +1,11 @@
 dist/
 node_modules/
 .DS_Store
+.env
+coverage/
+*.log
+.nyc_output/
+.eslintcache
+
+# Package manager lock files - keep only one
+# yarn.lock  # Uncomment if using Yarn instead of npm

@@ -16,7 +16,17 @@
   },
   "homepage": "https://github.com/haltakov/meme-mcp",
   "scripts": {
-    "build": "tsc && chmod +x dist/*.js"
+    "build": "tsc && chmod +x dist/*.js",
+    "dev": "nodemon --exec npm run build",
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "test:coverage": "jest --coverage",
+    "lint": "eslint src/**/*.ts",
+    "lint:fix": "eslint src/**/*.ts --fix",
+    "format": "prettier --write src/**/*.ts",
+    "type-check": "tsc --noEmit",
+    "prepack": "npm run build",
+    "start": "node dist/index.js"
   },
   "files": [
     "dist"
@@ -28,7 +38,18 @@
   },
   "type": "module",
   "devDependencies": {
+    "@eslint/js": "^9.30.0",
+    "@types/jest": "^30.0.0",
     "@types/node": "^22.13.9",
+    "@typescript-eslint/eslint-plugin": "^8.35.0",
+    "@typescript-eslint/parser": "^8.35.0",
+    "eslint": "^9.30.0",
+    "eslint-config-prettier": "^10.1.5",
+    "eslint-plugin-prettier": "^5.5.1",
+    "jest": "^30.0.3",
+    "nodemon": "^3.1.10",
+    "prettier": "^3.6.2",
+    "ts-jest": "^29.4.0",
     "typescript": "^5.8.2"
   }
 }
